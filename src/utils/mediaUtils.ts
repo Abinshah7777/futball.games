@@ -67,3 +67,11 @@ export function getClubLogoUrl(clubName: string): string {
   }
   return 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=80';
 }
+
+export function getPlayerImageUrl(player: { name: string; imageUrl?: string }): string {
+  if (player.imageUrl && player.imageUrl.trim() !== '') {
+    return player.imageUrl;
+  }
+  const encodedName = encodeURIComponent(player.name);
+  return `https://ui-avatars.com/api/?name=${encodedName}&background=1e293b&color=00FF87&size=150&font-size=0.33`;
+}

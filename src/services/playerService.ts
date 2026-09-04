@@ -1,16 +1,26 @@
 import type { Player, GridCategory } from '../types';
 import { INITIAL_PLAYERS, INITIAL_CLUBS } from '../data/footballDatabase';
-import { normalizeClubName } from '../../scripts/import-football-data';
+import { normalizeClubName } from '../utils/clubUtils';
 
 export function searchPlayers(query: string, maxResults: number = 8): Player[] {
   if (!query || query.trim().length === 0) return [];
-  const cleanQuery = query.trim().toLowerCase();
+  
+  const normalizeText = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  
+  const cleanQuery = normalizeText(query).trim();
+  const queryAsClub = normalizeText(normalizeClubName(cleanQuery));
 
   return INITIAL_PLAYERS.filter(player => {
-    const nameMatch = player.name.toLowerCase().includes(cleanQuery);
-    const fullNameMatch = player.fullName.toLowerCase().includes(cleanQuery);
-    const natMatch = player.nationality.toLowerCase().includes(cleanQuery);
-    const clubMatch = player.clubs.some(c => c.clubName.toLowerCase().includes(cleanQuery));
+    const nameMatch = normalizeText(player.name).includes(cleanQuery);
+    const fullNameMatch = normalizeText(player.fullName).includes(cleanQuery);
+    const natMatch = normalizeText(player.nationality).includes(cleanQuery);
+    
+    const clubMatch = player.clubs.some(c => {
+      const clubNorm = normalizeText(normalizeClubName(c.clubName));
+      return normalizeText(c.clubName).includes(cleanQuery) || 
+             clubNorm.includes(cleanQuery) || 
+             clubNorm === queryAsClub;
+    });
 
     return nameMatch || fullNameMatch || natMatch || clubMatch;
   }).slice(0, maxResults);

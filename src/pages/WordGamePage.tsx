@@ -65,26 +65,26 @@ export const WordGamePage: React.FC<WordGamePageProps> = ({
   };
 
   return (
-    <div className="max-w-3xl mx-auto space-y-6 pb-16 animate-fadeIn">
+    <div className="max-w-3xl mx-auto space-y-10 sm:space-y-12 pb-16 animate-fadeIn">
       
       {/* Header */}
       <div className="text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pitch-900/80 border border-emerald-500/30 text-emerald-300 text-xs font-bold font-display uppercase tracking-widest">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pitch-900/80 border border-match-green/30 text-emerald-300 text-xs font-bold font-display uppercase tracking-widest">
           <Sparkles className="w-4 h-4 text-amber-400" />
           <span>Football Word Game (Footle)</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-black text-white font-display">
-          Guess The <span className="pitch-gradient-text">Mystery Player</span>
+          Guess The <span className="text-match-green">Mystery Player</span>
         </h1>
-        <p className="text-sm text-slate-300">
+        <p className="text-sm text-chalk">
           Get feedback on Nation, Position, Club, Age, and Era after every guess.
         </p>
       </div>
 
       {/* Control Bar: Hints & Guesses */}
-      <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl glass-panel border border-slate-800">
+      <div className="flex flex-wrap items-center justify-between gap-4 rounded-none broadcast-panel border border-chalk-muted">
         <div className="flex items-center gap-2">
-          <span className="text-xs text-slate-400 font-semibold uppercase">Attempts Left:</span>
+          <span className="text-xs text-chalk-muted font-semibold uppercase">Attempts Left:</span>
           <span className="text-base font-black text-amber-400 font-display">{attemptsLeft} / {maxGuesses}</span>
         </div>
 
@@ -96,7 +96,7 @@ export const WordGamePage: React.FC<WordGamePageProps> = ({
                 setHintsUsed(prev => ({ ...prev, pos: true }));
                 setToastMessage({ msg: `Hint: Position is ${target.position}`, type: 'info' });
               }}
-              className="px-3 py-1.5 rounded-xl bg-stadium-900 hover:bg-stadium-850 border border-slate-700 text-xs font-bold text-slate-300"
+              className="px-3 py-1.5 rounded-none bg-stadium-900 hover:bg-stadium-850 border border-chalk-muted text-xs font-bold text-chalk"
             >
               Reveal Position
             </button>
@@ -108,7 +108,7 @@ export const WordGamePage: React.FC<WordGamePageProps> = ({
                 setHintsUsed(prev => ({ ...prev, nat: true }));
                 setToastMessage({ msg: `Hint: Nationality is ${target.nationality}`, type: 'info' });
               }}
-              className="px-3 py-1.5 rounded-xl bg-stadium-900 hover:bg-stadium-850 border border-slate-700 text-xs font-bold text-slate-300"
+              className="px-3 py-1.5 rounded-none bg-stadium-900 hover:bg-stadium-850 border border-chalk-muted text-xs font-bold text-chalk"
             >
               Reveal Nation
             </button>
@@ -116,7 +116,7 @@ export const WordGamePage: React.FC<WordGamePageProps> = ({
 
           <button
             onClick={handleResetGame}
-            className="p-2 rounded-xl bg-stadium-800 hover:bg-stadium-700 text-slate-300"
+            className="p-2 rounded-none bg-stadium-800 hover:bg-stadium-700 text-chalk"
             title="New Player"
           >
             <RotateCcw className="w-4 h-4" />
@@ -125,8 +125,8 @@ export const WordGamePage: React.FC<WordGamePageProps> = ({
       </div>
 
       {/* GUESS MATRIX HEADER */}
-      <div className="glass-panel p-4 rounded-3xl border border-emerald-500/20 shadow-2xl space-y-3">
-        <div className="grid grid-cols-6 gap-2 text-center text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wider pb-2 border-b border-slate-800">
+      <div className="broadcast-panel rounded-none border border-match-green/30 shadow-none space-y-3">
+        <div className="grid grid-cols-6 gap-2 text-center text-[10px] sm:text-xs font-bold text-chalk-muted uppercase tracking-wider pb-2 border-b border-chalk-muted">
           <span>Player</span>
           <span>Nation</span>
           <span>Pos</span>
@@ -143,7 +143,7 @@ export const WordGamePage: React.FC<WordGamePageProps> = ({
 
           {/* Empty Placeholder Rows */}
           {Array.from({ length: attemptsLeft }).map((_, idx) => (
-            <div key={'empty-' + idx} className="h-14 rounded-2xl bg-stadium-950/40 border border-slate-800/40 border-dashed" />
+            <div key={'empty-' + idx} className="h-14 rounded-none bg-pitch-950/40 border border-chalk-muted/40 border-dashed" />
           ))}
         </div>
       </div>
@@ -152,7 +152,7 @@ export const WordGamePage: React.FC<WordGamePageProps> = ({
       {!gameCompleted && (
         <button
           onClick={() => setIsSearchOpen(true)}
-          className="w-full py-4 px-6 rounded-2xl font-extrabold font-display text-base text-stadium-950 bg-gradient-to-r from-emerald-400 to-teal-300 hover:from-emerald-300 hover:to-teal-200 shadow-glow-emerald flex items-center justify-center gap-3 transition-all hover:scale-105"
+          className="w-full py-4 px-6 rounded-none font-extrabold font-display text-base text-stadium-950 bg-gradient-to-r from-emerald-400 to-teal-300 hover:from-emerald-300 hover:to-teal-200 shadow-glow-emerald flex items-center justify-center gap-3 transition-all hover:scale-105"
         >
           <Search className="w-5 h-5" />
           <span>Enter Guess ({guesses.length + 1}/{maxGuesses})</span>
@@ -160,9 +160,9 @@ export const WordGamePage: React.FC<WordGamePageProps> = ({
       )}
 
       {/* Legend Key */}
-      <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-slate-400">
+      <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-chalk-muted">
         <div className="flex items-center gap-1.5">
-          <span className="w-3 h-3 rounded bg-emerald-500" />
+          <span className="w-3 h-3 rounded bg-match-green" />
           <span>Exact Match</span>
         </div>
         <div className="flex items-center gap-1.5">

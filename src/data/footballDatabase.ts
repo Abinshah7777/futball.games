@@ -478,6 +478,211 @@ export const INITIAL_PLAYERS: Player[] = [
       { clubId: 'c4', clubName: 'Real Madrid', startYear: 2014, endYear: 2019 },
       { clubId: 'c1', clubName: 'Paris Saint-Germain', startYear: 2019, endYear: 2024 },
     ]
+  },
+  {
+    id: 'p31',
+    name: 'Zinedine Zidane',
+    fullName: 'Zinedine Yazid Zidane',
+    nationality: 'France',
+    position: 'Midfielder',
+    age: 51,
+    imageUrl: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c6', clubName: 'Juventus', startYear: 1996, endYear: 2001 },
+      { clubId: 'c4', clubName: 'Real Madrid', startYear: 2001, endYear: 2006 }
+    ]
+  },
+  {
+    id: 'p32',
+    name: 'Wayne Rooney',
+    fullName: 'Wayne Mark Rooney',
+    nationality: 'England',
+    position: 'Forward',
+    age: 38,
+    imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'new1', clubName: 'Everton', startYear: 2002, endYear: 2004 },
+      { clubId: 'c8', clubName: 'Manchester United', startYear: 2004, endYear: 2017 },
+      { clubId: 'new1', clubName: 'Everton', startYear: 2017, endYear: 2018 }
+    ]
+  },
+  {
+    id: 'p33',
+    name: 'Didier Drogba',
+    fullName: 'Didier Yves Drogba Tébily',
+    nationality: 'Ivory Coast',
+    position: 'Forward',
+    age: 46,
+    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c21', clubName: 'Marseille', startYear: 2003, endYear: 2004 },
+      { clubId: 'c5', clubName: 'Chelsea', startYear: 2004, endYear: 2012 },
+      { clubId: 'new2', clubName: 'Galatasaray', startYear: 2013, endYear: 2014 },
+      { clubId: 'c5', clubName: 'Chelsea', startYear: 2014, endYear: 2015 }
+    ]
+  },
+  {
+    id: 'p34',
+    name: 'Kaká',
+    fullName: 'Ricardo Izecson dos Santos Leite',
+    nationality: 'Brazil',
+    position: 'Midfielder',
+    age: 42,
+    imageUrl: 'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c9', clubName: 'AC Milan', startYear: 2003, endYear: 2009 },
+      { clubId: 'c4', clubName: 'Real Madrid', startYear: 2009, endYear: 2013 },
+      { clubId: 'c9', clubName: 'AC Milan', startYear: 2013, endYear: 2014 }
+    ]
+  },
+  {
+    id: 'p35',
+    name: 'Frank Lampard',
+    fullName: 'Frank James Lampard',
+    nationality: 'England',
+    position: 'Midfielder',
+    age: 45,
+    imageUrl: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'new3', clubName: 'West Ham United', startYear: 1995, endYear: 2001 },
+      { clubId: 'c5', clubName: 'Chelsea', startYear: 2001, endYear: 2014 },
+      { clubId: 'c7', clubName: 'Manchester City', startYear: 2014, endYear: 2015 }
+    ]
+  },
+  {
+    id: 'p36',
+    name: 'Steven Gerrard',
+    fullName: 'Steven George Gerrard',
+    nationality: 'England',
+    position: 'Midfielder',
+    age: 43,
+    imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c13', clubName: 'Liverpool', startYear: 1998, endYear: 2015 }
+    ]
+  },
+  {
+    id: 'p37',
+    name: 'Iker Casillas',
+    fullName: 'Iker Casillas Fernández',
+    nationality: 'Spain',
+    position: 'Goalkeeper',
+    age: 42,
+    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c4', clubName: 'Real Madrid', startYear: 1999, endYear: 2015 },
+      { clubId: 'new4', clubName: 'FC Porto', startYear: 2015, endYear: 2020 }
+    ]
+  },
+  {
+    id: 'p38',
+    name: 'Sergio Ramos',
+    fullName: 'Sergio Ramos García',
+    nationality: 'Spain',
+    position: 'Defender',
+    age: 38,
+    imageUrl: 'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c22', clubName: 'Sevilla', startYear: 2004, endYear: 2005 },
+      { clubId: 'c4', clubName: 'Real Madrid', startYear: 2005, endYear: 2021 },
+      { clubId: 'c1', clubName: 'Paris Saint-Germain', startYear: 2021, endYear: 2023 },
+      { clubId: 'c22', clubName: 'Sevilla', startYear: 2023, endYear: 2024 }
+    ]
+  },
+  {
+    id: 'p39',
+    name: 'Sergio Agüero',
+    fullName: 'Sergio Leonel Agüero del Castillo',
+    nationality: 'Argentina',
+    position: 'Forward',
+    age: 35,
+    imageUrl: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c15', clubName: 'Atlético Madrid', startYear: 2006, endYear: 2011 },
+      { clubId: 'c7', clubName: 'Manchester City', startYear: 2011, endYear: 2021 },
+      { clubId: 'c3', clubName: 'Barcelona', startYear: 2021, endYear: 2021 }
+    ]
+  },
+  {
+    id: 'p40',
+    name: 'Eden Hazard',
+    fullName: 'Eden Michael Hazard',
+    nationality: 'Belgium',
+    position: 'Midfielder',
+    age: 33,
+    imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c5', clubName: 'Chelsea', startYear: 2012, endYear: 2019 },
+      { clubId: 'c4', clubName: 'Real Madrid', startYear: 2019, endYear: 2023 }
+    ]
+  },
+  {
+    id: 'p41',
+    name: 'Luis Suárez',
+    fullName: 'Luis Alberto Suárez Díaz',
+    nationality: 'Uruguay',
+    position: 'Forward',
+    age: 37,
+    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c25', clubName: 'Ajax', startYear: 2007, endYear: 2011 },
+      { clubId: 'c13', clubName: 'Liverpool', startYear: 2011, endYear: 2014 },
+      { clubId: 'c3', clubName: 'Barcelona', startYear: 2014, endYear: 2020 },
+      { clubId: 'c15', clubName: 'Atlético Madrid', startYear: 2020, endYear: 2022 },
+      { clubId: 'c19', clubName: 'Inter Miami', startYear: 2024, endYear: 2026 }
+    ]
+  },
+  {
+    id: 'p42',
+    name: 'Neymar',
+    fullName: 'Neymar da Silva Santos Júnior',
+    nationality: 'Brazil',
+    position: 'Forward',
+    age: 32,
+    imageUrl: 'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c3', clubName: 'Barcelona', startYear: 2013, endYear: 2017 },
+      { clubId: 'c1', clubName: 'Paris Saint-Germain', startYear: 2017, endYear: 2023 }
+    ]
+  },
+  {
+    id: 'p43',
+    name: 'Karim Benzema',
+    fullName: 'Karim Mostafa Benzema',
+    nationality: 'France',
+    position: 'Forward',
+    age: 36,
+    imageUrl: 'https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c23', clubName: 'Lyon', startYear: 2004, endYear: 2009 },
+      { clubId: 'c4', clubName: 'Real Madrid', startYear: 2009, endYear: 2023 }
+    ]
+  },
+  {
+    id: 'p44',
+    name: 'Toni Kroos',
+    fullName: 'Toni Kroos',
+    nationality: 'Germany',
+    position: 'Midfielder',
+    age: 34,
+    imageUrl: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c11', clubName: 'Bayern Munich', startYear: 2007, endYear: 2014 },
+      { clubId: 'c24', clubName: 'Bayer Leverkusen', startYear: 2009, endYear: 2010 },
+      { clubId: 'c4', clubName: 'Real Madrid', startYear: 2014, endYear: 2024 }
+    ]
+  },
+  {
+    id: 'p45',
+    name: 'Manuel Neuer',
+    fullName: 'Manuel Peter Neuer',
+    nationality: 'Germany',
+    position: 'Goalkeeper',
+    age: 38,
+    imageUrl: 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=150&auto=format&fit=crop&q=80',
+    clubs: [
+      { clubId: 'c11', clubName: 'Bayern Munich', startYear: 2011, endYear: 2026 }
+    ]
   }
 ];
 
@@ -539,3 +744,39 @@ export const INITIAL_CONNECTION_PUZZLES: ConnectionPuzzle[] = [
     difficulty: 'Easy'
   }
 ];
+
+export let isDatabaseLoaded = false;
+export let isDatabaseLoading = false;
+
+export async function loadExtendedDatabase() {
+  if (isDatabaseLoaded || isDatabaseLoading) return;
+  isDatabaseLoading = true;
+  
+  try {
+    const response = await fetch('/data/fallback-db.json');
+    if (!response.ok) {
+      console.info('No extended fallback database found. Using default dataset.');
+      isDatabaseLoaded = true;
+      isDatabaseLoading = false;
+      return;
+    }
+    
+    const data = (await response.json()) as { players?: any[], clubs?: any[] };
+    if (data && Array.isArray(data.players) && Array.isArray(data.clubs)) {
+      // Replace the contents of the arrays safely
+      INITIAL_CLUBS.length = 0;
+      INITIAL_CLUBS.push(...data.clubs);
+      
+      INITIAL_PLAYERS.length = 0;
+      INITIAL_PLAYERS.push(...data.players);
+      
+      console.log(`Loaded extended database with ${INITIAL_PLAYERS.length} players and ${INITIAL_CLUBS.length} clubs.`);
+    }
+  } catch (err) {
+    console.error('Failed to load extended database:', err);
+  } finally {
+    isDatabaseLoaded = true;
+    isDatabaseLoading = false;
+  }
+}
+

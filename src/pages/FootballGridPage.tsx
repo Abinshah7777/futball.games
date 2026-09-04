@@ -152,7 +152,7 @@ export const FootballGridPage: React.FC<FootballGridPageProps> = ({
         <img
           src={flagUrl}
           alt={cat.name}
-          className="w-8 h-5 sm:w-10 sm:h-7 rounded object-cover shadow border border-slate-700 mb-1"
+          className="w-8 h-5 sm:w-10 sm:h-7 rounded object-cover shadow border border-chalk-muted mb-1"
         />
       );
     }
@@ -170,29 +170,29 @@ export const FootballGridPage: React.FC<FootballGridPageProps> = ({
     <div className="max-w-4xl mx-auto space-y-6 pb-16 animate-fadeIn">
       
       {/* Top Banner */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-2xl glass-panel border border-slate-800">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-none broadcast-panel border border-chalk-muted">
         <div>
           <h1 className="text-2xl font-black text-white font-display flex items-center gap-2">
-            <Gamepad2 className="w-6 h-6 text-emerald-400" />
+            <Gamepad2 className="w-6 h-6 text-match-green" />
             {isDaily ? "Daily Football Grid" : "Football Trivia Grid (3×3)"}
           </h1>
-          <p className="text-xs text-slate-400">
+          <p className="text-xs text-chalk-muted">
             Find a footballer who satisfies both row and column category requirements
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="px-3.5 py-1.5 rounded-xl bg-stadium-900 border border-slate-700 text-xs font-bold text-slate-300">
+          <div className="px-3.5 py-1.5 rounded-none bg-stadium-900 border border-chalk-muted text-xs font-bold text-chalk">
             Attempts Left: <span className="text-amber-400 text-sm font-black font-display ml-1">{attemptsLeft}</span>
           </div>
 
-          <div className="px-3.5 py-1.5 rounded-xl bg-pitch-950 border border-emerald-500/30 text-xs font-bold text-emerald-300">
-            Score: <span className="pitch-gradient-text text-sm font-black font-display ml-1">{correctCount * 100}</span>
+          <div className="px-3.5 py-1.5 rounded-none bg-pitch-950 border border-match-green/30 text-xs font-bold text-emerald-300">
+            Score: <span className="text-match-green text-sm font-black font-display ml-1">{correctCount * 100}</span>
           </div>
 
           <button
             onClick={handleResetGame}
-            className="p-2 rounded-xl bg-stadium-800 hover:bg-stadium-700 text-slate-300 transition-colors"
+            className="p-2 rounded-none bg-stadium-800 hover:bg-stadium-700 text-chalk transition-colors"
             title="Restart Grid"
           >
             <RotateCcw className="w-4 h-4" />
@@ -201,7 +201,7 @@ export const FootballGridPage: React.FC<FootballGridPageProps> = ({
       </div>
 
       {/* Grid Progress Bar */}
-      <div className="w-full bg-stadium-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-slate-800">
+      <div className="w-full bg-stadium-900 rounded-full h-2.5 overflow-hidden p-0.5 border border-chalk-muted">
         <div
           className="bg-gradient-to-r from-pitch-500 to-emerald-400 h-full rounded-full transition-all duration-500"
           style={{ width: `${completionPercentage}%` }}
@@ -209,22 +209,24 @@ export const FootballGridPage: React.FC<FootballGridPageProps> = ({
       </div>
 
       {/* 3x3 GRID DISPLAY */}
-      <div className="glass-panel p-4 sm:p-6 rounded-3xl border border-emerald-500/20 shadow-2xl">
-        <div className="grid grid-cols-4 gap-2 sm:gap-4 items-center text-center">
-          
-          {/* Top-Left Empty Corner */}
-          <div className="p-2 rounded-xl bg-stadium-950/80 border border-slate-800 flex items-center justify-center h-full">
-            <span className="font-display font-black text-xs text-emerald-400 tracking-widest uppercase">F11</span>
-          </div>
+      <div className="bg-pitch-950 p-1 sm:p-2 border border-chalk-muted border-4">
+        {/* Outer pitch border */}
+        <div className="border border-chalk-muted/50 p-2 sm:p-4">
+          <div className="grid grid-cols-4 gap-1 sm:gap-2 items-stretch text-center">
+            
+            {/* Top-Left Empty Corner */}
+            <div className="p-2 bg-panel-900 border border-chalk-muted flex items-center justify-center">
+              <span className="font-display font-black text-2xl text-match-green tracking-widest">F11</span>
+            </div>
 
           {/* Column Headers */}
           {colCategories.map((col, cIdx) => (
             <div
               key={col.id + cIdx}
-              className="p-2 sm:p-3 rounded-2xl bg-stadium-900/90 border border-slate-800 flex flex-col items-center justify-center min-h-[85px] shadow-sm"
+              className="p-2 sm:p-3 bg-panel-900 border border-chalk-muted flex flex-col items-center justify-center shadow-none"
             >
               {renderCategoryMedia(col)}
-              <span className="text-xs sm:text-sm font-bold text-white font-display line-clamp-1">
+              <span className="text-sm font-bold text-chalk font-display line-clamp-1">
                 {col.name}
               </span>
             </div>
@@ -234,9 +236,9 @@ export const FootballGridPage: React.FC<FootballGridPageProps> = ({
           {gridState.map((rowCells, rIdx) => (
             <React.Fragment key={'row-' + rIdx}>
               {/* Row Header */}
-              <div className="p-2 sm:p-3 rounded-2xl bg-stadium-900/90 border border-slate-800 flex flex-col items-center justify-center min-h-[95px] shadow-sm">
+              <div className="p-2 sm:p-3 bg-panel-900 border border-chalk-muted flex flex-col items-center justify-center shadow-none">
                 {renderCategoryMedia(rowCategories[rIdx])}
-                <span className="text-xs sm:text-sm font-bold text-white font-display line-clamp-1">
+                <span className="text-sm font-bold text-chalk font-display line-clamp-1">
                   {rowCategories[rIdx].name}
                 </span>
               </div>
@@ -253,6 +255,7 @@ export const FootballGridPage: React.FC<FootballGridPageProps> = ({
             </React.Fragment>
           ))}
 
+          </div>
         </div>
       </div>
 

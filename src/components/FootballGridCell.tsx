@@ -1,6 +1,7 @@
 import React from 'react';
-import { Plus, CheckCircle2, XCircle } from 'lucide-react';
+import { CheckCircle2, XCircle } from 'lucide-react';
 import type { GridCell } from '../types';
+import { getPlayerImageUrl } from '../utils/mediaUtils';
 
 interface FootballGridCellProps {
   cell: GridCell;
@@ -19,31 +20,28 @@ export const FootballGridCell: React.FC<FootballGridCellProps> = ({
     <button
       onClick={onClick}
       disabled={disabled || (isValidated && isCorrect)}
-      className={`relative w-full aspect-square rounded-2xl p-2.5 flex flex-col items-center justify-center transition-all duration-300 border overflow-hidden ${
+      className={`relative w-full aspect-square p-2.5 flex flex-col items-center justify-center transition-colors duration-150 border ${
         isValidated
           ? isCorrect
-            ? 'bg-gradient-to-b from-pitch-900/90 to-stadium-950 border-emerald-500/80 shadow-glow-emerald'
-            : 'bg-gradient-to-b from-rose-950/80 to-stadium-950 border-rose-500/60 animate-shake'
-          : 'bg-stadium-900/70 hover:bg-pitch-950/70 border-slate-800 hover:border-emerald-500/40 cursor-pointer group'
+            ? 'bg-pitch-900 border-match-green animate-flash-green'
+            : 'bg-referee-red/20 border-referee-red animate-shake'
+          : 'bg-pitch-950 hover:bg-pitch-900 border-chalk-muted hover:border-match-green cursor-pointer group'
       }`}
     >
-      {/* Glow background accent if correct */}
-      {isCorrect && (
-        <div className="absolute inset-0 bg-emerald-500/10 pointer-events-none blur-xl" />
-      )}
+
 
       {guessedPlayer ? (
         <div className="flex flex-col items-center text-center z-10 w-full">
           <div className="relative mb-1.5">
             <img
-              src={guessedPlayer.imageUrl || 'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=100'}
+              src={getPlayerImageUrl(guessedPlayer)}
               alt={guessedPlayer.name}
               className={`w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 ${
                 isCorrect ? 'border-emerald-400' : 'border-rose-400'
               } shadow-md`}
             />
             {isCorrect ? (
-              <div className="absolute -bottom-1 -right-1 bg-emerald-500 text-stadium-950 p-0.5 rounded-full">
+              <div className="absolute -bottom-1 -right-1 bg-match-green text-stadium-950 p-0.5 rounded-full">
                 <CheckCircle2 className="w-4 h-4 fill-current text-white" />
               </div>
             ) : (
@@ -61,11 +59,9 @@ export const FootballGridCell: React.FC<FootballGridCellProps> = ({
           </span>
         </div>
       ) : (
-        <div className="flex flex-col items-center text-center text-slate-500 group-hover:text-emerald-400 transition-colors">
-          <div className="w-9 h-9 rounded-full bg-stadium-800/80 group-hover:bg-pitch-900 flex items-center justify-center mb-1 transition-all group-hover:scale-110 border border-slate-700/50 group-hover:border-emerald-500/50">
-            <Plus className="w-5 h-5" />
-          </div>
-          <span className="text-[11px] font-semibold tracking-wide uppercase">Select Player</span>
+        <div className="flex flex-col items-center text-center text-chalk-muted group-hover:text-match-green transition-colors">
+          <span className="font-display text-xl sm:text-3xl font-black opacity-30 group-hover:opacity-100 mb-1">+</span>
+          <span className="text-xs font-display tracking-widest text-chalk-muted group-hover:text-match-green">SELECT</span>
         </div>
       )}
     </button>
